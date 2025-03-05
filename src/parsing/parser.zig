@@ -244,7 +244,7 @@ pub fn ParserType(comptime options: TemplateOptions) type {
                                 self.canProducePartialNodes())
                             {
                                 // Remove the last node
-                                const last_node_value = nodes.pop();
+                                const last_node_value = nodes.pop().?;
 
                                 // Render all nodes produced until now
                                 try self.produceNodes(render);
